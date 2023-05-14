@@ -6,11 +6,26 @@
 	display: grid;
 	grid-template-columns: 200px 1fr;
 
-	@media screen and (max-width: 680px) {
-		grid-template-columns: 5rem 1fr;
-	}
 	&__aside{
 		border-right: 1px solid #000;
+		&-repo{
+			display: flex;
+			column-gap: 1.5rem;
+			font-size: 1.6rem;
+			padding: .4rem .8rem;
+			background-color: #000;
+			border-radius: 18px;
+			text-align: center;
+			margin: 4rem .4rem;
+			transition: filter .3s ease-in;
+			svg{
+				font-size: 2rem;
+				width: 2rem;
+			}
+			&:hover{
+				filter: invert(1);
+			}
+		}
 		.chats{
 			&__item{
 				padding-left: 1rem;
@@ -113,6 +128,18 @@
 				&:hover{
 					transform: scale(1.1);
 				}
+			}
+		}
+	}
+	@media screen and (max-width: 680px) {
+		grid-template-columns: 5rem 1fr;
+		&__aside-repo{
+			svg{
+				width: 100%;
+			}
+			span{
+				display: none;
+			
 			}
 		}
 	}
